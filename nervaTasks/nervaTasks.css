@@ -1,0 +1,324 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #3e4d6c;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #222;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+button:hover {
+  background-color: #fff;
+}
+button.ativo {
+  background-color: #005eff;
+  color: #fff;
+}
+button.ativo:hover {
+  background-color: #004bcc;
+}
+
+main {
+  width: 100%;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.tarefas {
+  display: grid;
+  grid-template-areas: "nav-tarefas adicionar-tarefa-form" "nav-tarefas lista-tarefas";
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 16px;
+  width: 100%;
+  max-width: 800px;
+  padding: 24px;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.tarefas h1 {
+  font-weight: 900;
+  font-size: 22px;
+  color: #3e4d6c;
+  margin-bottom: 10px;
+  transition: 300ms ease-in-out;
+  order: 1;
+}
+.tarefas h1:hover {
+  color: #004bcc;
+}
+.tarefas #nav-tarefas {
+  grid-area: nav-tarefas;
+}
+.tarefas #adicionar-tarefa-form {
+  grid-area: adicionar-tarefa-form;
+}
+
+#nav-tarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+}
+#nav-tarefas button {
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  width: 100%;
+}
+
+#adicionar-tarefa-form {
+  display: flex;
+  gap: 16px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#adicionar-tarefa-form #btn-adicionar-tarefa:hover {
+  font-size: 14px;
+  font-weight: 700;
+  border: 0.1px solid #000000;
+}
+#adicionar-tarefa-form input[type=text] {
+  flex: 1;
+  flex-basis: 100%;
+}
+#adicionar-tarefa-form input[type=date] {
+  flex: 1;
+  flex-basis: 100%;
+}
+#adicionar-tarefa-form input[type=checkbox] {
+  cursor: pointer;
+}
+#adicionar-tarefa-form .tarefa-estudo {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease-in-out;
+  background-color: #f9f9f9;
+}
+#adicionar-tarefa-form .tarefa-estudo:hover, #adicionar-tarefa-form .tarefa-estudo:active {
+  background-color: #fff;
+}
+
+input {
+  border: 0;
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  transition: all 300ms ease-in-out;
+}
+input:hover, input:active {
+  background-color: #fff;
+}
+
+#lista-tarefas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0 0;
+}
+#lista-tarefas li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  margin: -8px;
+  border-radius: 8px;
+  transition: all 300ms ease-in-out;
+}
+#lista-tarefas li:hover {
+  background-color: #fff;
+}
+#lista-tarefas li .tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#lista-tarefas li .btnEstudo {
+  cursor: pointer;
+  background-color: #005eff;
+  color: #fff;
+  font-size: 13px;
+  transition: all 300ms ease-in-out;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+#lista-tarefas li .btnEstudo:hover {
+  color: #fff;
+  font-size: 14px;
+  border: 0.1px solid #000000;
+}
+#lista-tarefas li .btnEstudo .linkEstudo:link {
+  text-decoration: none;
+}
+#lista-tarefas li .btnEstudo .linkEstudo:visited {
+  text-decoration: none;
+  color: inherit;
+}
+#lista-tarefas li .btnEstudo .linkEstudo:hover {
+  text-decoration: underline;
+}
+#lista-tarefas li button {
+  padding: 8px 8px 8px 0;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: #999;
+}
+#lista-tarefas li button:hover {
+  color: #595959;
+}
+#lista-tarefas li .botao-excluir {
+  padding: 8px 0 8px 8px;
+}
+#lista-tarefas li .botao-excluir:hover {
+  color: #595959;
+}
+#lista-tarefas li .texto-tarefa {
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 4px;
+  margin: 0;
+}
+#lista-tarefas li .data-tarefa {
+  font-size: 12px;
+  color: #666;
+}
+#lista-tarefas li .data-tarefa.atrasada {
+  color: red;
+}
+#lista-tarefas li.completas {
+  opacity: 0.6;
+}
+#lista-tarefas li.completas .botao-tarefa {
+  color: green;
+}
+
+@media screen and (min-width: 670px) {
+  #adicionar-tarefa-form {
+    flex-wrap: nowrap;
+  }
+  #adicionar-tarefa-form input[type=text] {
+    flex-basis: inherit;
+  }
+  #adicionar-tarefa-form input[type=date] {
+    flex: inherit;
+  }
+}
+@media screen and (max-width: 570px) {
+  body {
+    padding: 10px;
+    max-width: 85%;
+  }
+  .tarefas {
+    display: grid;
+    grid-template-areas: "titulo" "nav-tarefas" "adicionar-tarefa-form" "lista-tarefas";
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: center;
+  }
+  .tarefas h1 {
+    text-align: center;
+    grid-area: titulo;
+    order: -1;
+  }
+  .tarefas #nav-tarefas {
+    grid-area: nav-tarefas;
+  }
+  .tarefas #adicionar-tarefa-form {
+    grid-area: adicionar-tarefa-form;
+  }
+  .tarefas #lista-tarefas {
+    grid-area: lista-tarefas;
+  }
+  #nav-tarefas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 8px;
+  }
+  button[data-filter=todas] {
+    grid-column: 1/span 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  button[data-filter=hoje] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  button[data-filter=atrasadas] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  button[data-filter=agendadas] {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  button[data-filter=pendentes] {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  button[data-filter=estudos] {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  button[data-filter=completas] {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  #adicionar-tarefa-form {
+    flex-wrap: wrap;
+    margin: 60px 0 10px;
+  }
+  #adicionar-tarefa-form input[type=text],
+  #adicionar-tarefa-form input[type=date] {
+    flex-basis: 100%;
+  }
+  #lista-tarefas li {
+    padding: 12px;
+    margin: 0;
+    border-radius: 8px;
+  }
+  #lista-tarefas li .tarefa {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #lista-tarefas li .texto-tarefa {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  #lista-tarefas li .data-tarefa {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=nervaTasks.css.map */

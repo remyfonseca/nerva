@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../nervaTasks/nervaTasks.css">
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <title>Nerva • Tasks</title>
+</head>
+<body>
+  <main>
+    
+    <div class="tarefas">
+      <h1>NervaTasks</h1>
+      <nav id="nav-tarefas">
+        <button data-filter="todas" class="ativo">
+          <i class="fa-solid fa-box-archive"></i> Todas
+        </button>
+        <button data-filter="hoje">
+          <i class="fa-solid fa-calendar-day"></i> Hoje
+        </button>
+        <button data-filter="agendadas">
+          <i class="fa-solid fa-clock"></i> Agendadas
+        </button>
+        <button data-filter="atrasadas">
+          <i class="fa-solid fa-circle-exclamation"></i> Atrasadas
+        </button>
+        <button data-filter="pendentes">
+          <i class="fa-regular fa-circle"></i> Pendentes
+        </button>
+        <button data-filter="estudos">
+          <i class="fa-solid fa-book"></i> Aprendizado
+        </button>
+        <button data-filter="completas">
+          <i class="fa-regular fa-circle-check"></i> Completas
+        </button>
+      </nav>
+
+      <form id="adicionar-tarefa-form">
+        <input type="text" name="texto-tarefa" id="texto-tarefa" placeholder="Adicione uma tarefa" required>
+        <input type="date" name="data-tarefa" id="data-tarefa" required>
+        <div class="tarefa-estudo">
+          <label for="tarefa-estudo">Tarefa de Estudo?</label>
+          <input type="checkbox" id="tarefa-estudo" name="tarefa-estudo" class=".checkbox-label">
+        </div>
+        <button id="btn-adicionar-tarefa" class="ativo" type="submit">Adicionar</button>
+      </form>
+
+      <ul id="lista-tarefas">
+
+      </ul>
+    </div>
+    
+  </main>
+  
+  <script src="../nervaTasks/nervaTasks.js"></script>
+</body>
+</html>

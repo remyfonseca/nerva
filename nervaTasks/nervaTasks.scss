@@ -1,0 +1,392 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #3e4d6c;
+}
+
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #222;
+  font-size: 14px;
+  transition: all 300ms ease-in-out;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+
+  &:hover {
+    background-color: #fff;
+  }
+
+  &.ativo {
+    background-color: #005eff;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#005eff, 10%);
+    }
+  }
+}
+
+main {
+  width: 100%;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.tarefas {
+  display: grid;
+  grid-template-areas: 'nav-tarefas adicionar-tarefa-form' 'nav-tarefas lista-tarefas';
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0 16px;
+  width: 100%;
+  max-width: 800px;
+  padding: 24px;
+  background-color: rgba($color: #fff, $alpha: 0.8);
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.1);
+
+  h1{
+    font-weight: 900;
+    font-size: 22px;
+    color: #3e4d6c;
+    margin-bottom: 10px;
+    transition: 300ms ease-in-out;
+    order: 1;
+    
+    &:hover {
+      color: darken(#005eff, 10%);
+    }
+  }
+  #nav-tarefas {
+    grid-area: nav-tarefas;
+  }
+
+  #adicionar-tarefa-form {
+    grid-area: adicionar-tarefa-form;
+  }
+}
+
+#nav-tarefas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+
+  button {
+    column-gap: 8px;
+    width: 100%;
+  }
+}
+
+#adicionar-tarefa-form {
+  display: flex;
+  gap: 16px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  #btn-adicionar-tarefa{
+    &:hover{
+        font-size: 14px;
+        font-weight: 700;
+        border: 0.1px solid #000000;
+    }
+
+  }
+
+  input[type='text'] {
+    flex: 1;
+    flex-basis: 100%;
+  }
+
+  input[type='date'] {
+    flex: 1;
+    flex-basis: 100%;
+  }
+
+  input[type='checkbox'] {
+    cursor: pointer;
+    
+  }
+  .tarefa-estudo {
+    display: flex; 
+    align-items: center; 
+    padding: 3px; 
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.3);
+    transition: all 300ms ease-in-out;
+    background-color: #f9f9f9;
+  
+    &:hover,
+    &:active {
+      background-color: #fff;
+    }
+  }
+ 
+}
+
+  input {
+    border: 0;
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 0 2px rgba($color: #000000, $alpha: 0.3);
+    transition: all 300ms ease-in-out;
+
+    &:hover,
+    &:active {
+      background-color: #fff;
+    }
+  }
+
+
+#lista-tarefas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    margin: -8px;
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    .tarefa {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btnEstudo{
+      cursor: pointer;
+      background-color: #005eff;
+      color: #fff;
+      font-size: 13px;
+      transition: all 300ms ease-in-out;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 8px 12px;
+
+      &:hover{
+        color: #fff;
+        font-size: 14px;
+        border: 0.1px solid #000000;
+      }
+      .linkEstudo {
+        
+        &:link{
+          text-decoration: none;
+          
+        }
+        &:visited{
+          text-decoration: none;
+          color: inherit;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+
+      }
+    }
+
+
+    button {
+      padding: 8px 8px 8px 0;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      color: #999;
+
+      &:hover {
+        color: darken(#999, 25%);
+      }
+    }
+
+    .botao-excluir {
+      padding: 8px 0 8px 8px;
+
+
+      &:hover {
+        color: darken(#999, 25%);
+      }
+    }
+
+    .texto-tarefa {
+      font-weight: 600;
+      font-size: 14px;
+      padding-bottom: 4px;
+      margin: 0;
+    }
+
+    .data-tarefa {
+      font-size: 12px;
+      color: #666;
+
+      &.atrasada {
+        color: red;
+      }
+    }
+
+    &.completas {
+      opacity: 0.6;
+
+      .botao-tarefa {
+        color: green;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 670px) {
+  #adicionar-tarefa-form {
+    flex-wrap: nowrap;
+
+    input[type='text'] {
+      flex-basis: inherit;
+    }
+
+    input[type='date'] {
+      flex: inherit;
+    }
+  }
+  
+}
+
+@media screen and (max-width: 570px) {
+  body {
+    padding: 10px;
+    max-width: 85%;
+    
+  }
+  .tarefas {
+    display: grid;
+    grid-template-areas:
+      'titulo'
+      'nav-tarefas'
+      'adicionar-tarefa-form'
+      'lista-tarefas';
+    grid-template-columns: 1fr;
+    gap: 8px;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      grid-area: titulo;
+      order: -1;
+    }
+
+    #nav-tarefas {
+      grid-area: nav-tarefas;
+    }
+  
+    #adicionar-tarefa-form {
+      grid-area: adicionar-tarefa-form;
+    }
+
+    #lista-tarefas {
+      grid-area: lista-tarefas;
+    }
+  }
+ 
+   #nav-tarefas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 8px; 
+  }
+
+  button[data-filter="todas"] {
+    grid-column: 1 / span 2; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  button[data-filter="hoje"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  button[data-filter="atrasadas"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  button[data-filter="agendadas"] {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  button[data-filter="pendentes"] {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  button[data-filter="estudos"] {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  button[data-filter="completas"] {
+    grid-column: 2;
+    grid-row: 4;
+  }
+
+  #adicionar-tarefa-form {
+    flex-wrap: wrap;
+    margin: 60px 0 10px;
+    input[type='text'],
+    input[type='date'] {
+      flex-basis: 100%;
+      
+    }
+  }
+
+  #lista-tarefas li {
+    padding: 12px;
+    margin: 0;
+    border-radius: 8px;
+
+    .tarefa {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .texto-tarefa {
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .data-tarefa {
+      font-size: 10px;
+    }
+  }
+}
